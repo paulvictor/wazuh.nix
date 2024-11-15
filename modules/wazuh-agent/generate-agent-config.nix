@@ -14,4 +14,7 @@
     "<location>/var/log/syslog</location>" = "<location>journald</location>";
   };
 in
-  builtins.replaceStrings (builtins.attrNames substitutes) (builtins.attrValues substitutes) upstreamConfig
+  builtins.replaceStrings
+    (builtins.attrNames substitutes)
+    (builtins.attrValues substitutes)
+    upstreamConfig

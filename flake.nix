@@ -20,8 +20,8 @@
           wazuh-agent = pkgs.callPackage ./pkgs/wazuh-agent.nix {};
         };
         overlays = {
-          wazuh = _: __: {
-            inherit packages;
+          wazuh = final: prev: {
+            wazuh-agent = final.callPackage ./pkgs/wazuh-agent.nix {};
           };
         };
         nixosModules = {
